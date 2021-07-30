@@ -12,6 +12,9 @@
   ],
   "author": "CodingNinjas",
   "license": "ISC",
+  "engines": {
+    "node": "14.17.0"
+  },
   "dependencies": {
     "connect-flash": "^0.1.1",
     "connect-mongo": "^2.0.3",
