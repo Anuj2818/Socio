@@ -1,6 +1,7 @@
 header {
   background-color: dodgerblue;
   position: fixed;
+  padding: 0px 9px;
   color: white;
   height: 3vw;
   width: 100%;
@@ -9,7 +10,8 @@ header {
   align-items: center; }
   header a {
     color: white;
-    text-decoration: none; }
+    text-decoration: none;
+    padding: 0px 11px; }
   header #left {
     margin-left: 0.5vw;
     font-weight: bold;
