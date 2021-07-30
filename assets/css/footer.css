@@ -1,17 +1,18 @@
 footer {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   position: fixed;
+  padding-left: 20px;
   left: 0;
   bottom: 0;
+  height: 4vw;
   width: 100%;
   background-color: grey;
   color: white; }
   footer a {
     color: white;
-    text-decoration: none;
-    display: block; }
+    text-decoration: none; }
   footer #left {
     display: flex;
     align-items: center;
