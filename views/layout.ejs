@@ -1,59 +1,47 @@
+<!DOCTYPE html>
 <html>
     <head>
         <title>
-            <%= title  %>
+            <%= title %>
         </title>
+        <!-- <script src="https://kit.fontawesome.com/80a786f28a.js" crossorigin="anonymous"></script> -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
-
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-
-        <link rel="stylesheet" href="/css/layout.css">
-        <link rel="stylesheet" href="/css/header.css">
-        <link rel="stylesheet" href="/css/footer.css">
-
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="css/layout.css">
+        <link rel="stylesheet" href="css/header.css">
+        <link rel="stylesheet" href="css/footer.css">
         <%- style %>
-        
     </head>
-
     <body>
-        <%- include('_header'); %>
-
-       
-        
-        <main id="layout-main">
-            <%- body %>
-
+        <%- include('_header') -%>
+        <main>
+            <div style="margin-top: 2.5vw;">
+                <%- body -%>
+            </div>
+            
         </main>
-
-
-        <%- include('_footer'); %>
-
-        <%- script %>
-
+        <!-- <%- include('_footer') -%> -->
+        <%- script -%>
         <script>
-            <% if (flash.success && flash.success.length > 0) {%>
+            <% if(flash.success && flash.success.length > 0) { %>
                 new Noty({
                     theme: 'relax',
-                    text: "<%= flash.success %>",
+                    text: '<%= flash.success %>',
                     type: 'success',
                     layout: 'topRight',
                     timeout: 1500
-                    
-                }).show();    
-            <%} %>
-
-            <% if (flash.error && flash.error.length > 0) {%>
+                }).show();
+            <% } %>
+            <% if(flash.error && flash.error.length > 0) { %>
                 new Noty({
                     theme: 'relax',
-                    text: "<%= flash.error %>",
+                    text: '<%= flash.error %>',
                     type: 'error',
                     layout: 'topRight',
                     timeout: 1500
-                    
-                }).show();    
-            <%} %>
+                }).show();
+            <% } %>
         </script>
-        
     </body>
 </html>

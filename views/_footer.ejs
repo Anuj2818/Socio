@@ -1,20 +1,16 @@
-<footer id="layout-footer">
-    <div>
-        <p>
-            &#169; Coding Ninjas. All Rights Reserved
-        </p>
+<footer>
+    <div id="left">
+        <div>
+            <p>© Abhishek Garg. All Rights Reserved</p>
+        </div>
+        <div>
+            <a href="/">Home</a>
+            <%if(locals.user) { %>
+                <a href="/users/profile/<%= user.id %>">Profile</a>
+            <% } else { %>
+                <a href="/users/sign-in">Sign In</a>
+            <% } %>
+        </div>
     </div>
-
-    <div>
-        <nav class="footer-nav">
-            <ul>
-                <li>
-                    <a href="/">Home</a>
-                </li>
-                <li>
-                    <a href="/users/profile">Profile</a>
-                </li>
-            </ul>
-        </nav>
-    </div>
+    <div id="right"></div>
 </footer>

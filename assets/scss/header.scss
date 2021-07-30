@@ -1,35 +1,27 @@
-#layout-header{
-    nav{
-        display: flex;
-        justify-content: space-between;
-        padding: 0 10px;
-        background: #2196f3;
+header
+{
+    background-color: dodgerblue;
+    position: fixed;
+    color: white;
+    height: 2.5vw;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    a
+    {
         color: white;
-        box-shadow: 1px 1px 1px 1px lightgrey;
-
-        .mini-logo{
-            p{
-                margin: 5px;
-                font-size: 1.4rem;
-                font-weight: bold;
-            }
-        }
-
-        .auth-links{
-            ul{
-                margin: 5% 5px;
-                display: flex;
-                list-style: none;
-                li{
-                    margin-right: 10px;
-                }
-            }
-        }
-
-        a{
-            color: white;
-            text-decoration: none;
-        }
-
+        text-decoration: none;
+    }
+    #left
+    {
+        margin-left: 0.5vw;
+        font-weight: bold;
+        font-size: 1.9vw;
+    }
+    #right
+    {
+        margin-right: 0.5vw;
+        font-size: 1.4vw;
     }
 }

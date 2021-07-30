@@ -1,38 +1,50 @@
-<link rel="stylesheet" href="/css/home.css">
+<link rel="stylesheet" href="css/home.css">
 
 <div id="home-container">
+    <section id="user-nav">
+        <h4>User</h4>
+        <% if(locals.user) { %>
+            <% if(user.avatar) { %>
+                <img src="<%= user.avatar %>" alt="<%= user.name %>" width="100">
+            <% } %>
+            <p>
+                <a href="/users/profile/<%= user.id %>"><%= user.name %></a>
+            </p>
+        <% } %>
+    </section>
     <section id="feed-posts">
-            <h4>Posts</h4>
-            <% if(locals.user){ %>
-            <form action="/posts/create" id="new-post-form" method="POST">
-                <textarea name="content" cols="30" rows="3" placeholder="Type Here..." required></textarea>
-                <input type="submit" value="Post">
-            </form>
-            <% } %>
-        
-            <div id="posts-list-container">
-                <ul>
-                    <% for(post of posts){ %>
-                        
-                    <%- include('_post') -%>
-                        
-                    <%} %>
-                </ul>
-            </div>
-        </section>
-        
-        
-        <section id="user-friends">
-            <h4>Friends</h4>
-            <% for(u of all_users){%>
-                <p>
-                    <a href="/users/profile/<%= u.id %>"><%= u.name %></a>
-                </p>
-            <% } %>
-        </section>
+        <h4>Posts</h4>
+        <% if(locals.user) {%>
+        <form action="/posts/create" id="new-post-form" method="POST">
+            <textarea name="content" cols="40" rows="4" placeholder="What's on your mind, <%= locals.user.name%>?" required></textarea>
+            <input type="submit" value="Post">
+        </form>
+        <% } %>
+    
+        <div id="posts-list-container">
+            <ul>
+                <% for(post of posts) { %>
+                <%- include('_post') -%>
+                <% } %>
+            </ul>
+        </div>
+    </section>
+    
+    <section id="user-friends">
+        <h4>Friends</h4>
+        <% for(u of all_users) { %>
+            <p>
+                <a href="/users/profile/<%= u.id %>"><%= u.name %></a>
+            </p>
+        <% } %>
+    </section>
 </div>
-
-<!-- importing this script for creating the comments -->
-<script src="/js/home_post_comments.js" ></script>
-<script src="/js/home_posts.js"></script>
-
+<script src="js/home_post_comments.js"></script>
+<script src="js/home_post.js"></script>
+<script src="js/toggle_likes.js"></script>
+<script>
+    $('.toggle-like-button').each(function(){
+        let self = this;
+        let toggleLike = new ToggleLike(self);
+    });
+</script>
