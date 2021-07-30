@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
-
-mongoose.connect('mongodb+srv://admin-anuj:1234@cluster0.7zgkl.mongodb.net/socio');
+require('dotenv').config();
+mongoose.connect(process.env.MONGOOSE);
 
 const db = mongoose.connection;
 
