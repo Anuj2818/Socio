@@ -48,7 +48,7 @@ app.set('views', './views');
 app.use(session({
     name: 'socio',
     // TODO change the secret before deployment in production mode
-    secret: 'blahsomething',
+    secret: process.env.SECRET,
     saveUninitialized: false,
     resave: false,
     cookie: {
