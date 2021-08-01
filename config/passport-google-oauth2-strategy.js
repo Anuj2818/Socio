@@ -8,7 +8,7 @@ const User = require('../models/user');
 passport.use(new googleStrategy({
         clientID: process.env.CLIENT_ID,
         clientSecret: process.env.CLIENT_SECRET,
-        callbackURL: "http://localhost:8000/users/auth/google/callback",
+        callbackURL: "http://socio-app-1.herokuapp.com/users/auth/google/callback",
     },
 
     function(accessToken, refreshToken, profile, done){
